@@ -11,23 +11,19 @@ from app.core.config import settings
 from app.db.base import Base
 
 # Import all models here to ensure they are registered with Base.metadata
-from app.db.models.user import User
-from app.db.models.masters.roles import Role
-from app.db.models.masters.qualifications import Qualification
-from app.db.models.consultant.consultant_enquiry import ConsultantEnquiry
-from app.db.models.masters.languages import Language
-
-# Import other models as you create them
-# from app.db.models.consultant_enquiry import *
-# from app.db.models.consultant_profile import *
-# from app.db.models.consultant_bank_detail import *
-# from app.db.models.student_profile import *
+# Import from __init__ to ensure correct order
+from app.db.models import (
+    Role,
+    Qualification,
+    Language,
+    User,
+    ConsultantEnquiry,
+)
 
 # this is the Alembic Config object
 config = context.config
 
-# Override sqlalchemy.url with the one from settings
-config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
+# No need to override - using psycopg2 URL directly from alembic.ini
 
 # Interpret the config file for Python logging
 if config.config_file_name is not None:
