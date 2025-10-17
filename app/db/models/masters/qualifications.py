@@ -11,5 +11,3 @@ class Qualification(Base):
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
     name = Column(String, nullable=False, unique=True, index=True)
     description = Column(String, nullable=False)
-    
-    consultant_enquiry = relationship("ConsultantEnquiry", back_populates="qualification")

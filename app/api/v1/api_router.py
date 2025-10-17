@@ -4,6 +4,7 @@ from fastapi.responses import JSONResponse
 from fastapi import HTTPException
 
 from app.api.v1.Public.language import router as language_router
+from app.api.v1.Public.qualification import router as qualification_router
 from app.core.exception_handlers import (
     http_exception_handler,
     validation_exception_handler,
@@ -15,6 +16,7 @@ api_router = APIRouter()
 
 # Include all route modules
 api_router.include_router(language_router)
+api_router.include_router(qualification_router)
 
 # Function to register all routers & exception handlers to app
 def register_app(app: FastAPI):
