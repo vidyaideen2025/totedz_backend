@@ -15,6 +15,7 @@ from app.db.models.user import User
 from app.db.models.masters.roles import Role
 from app.db.models.masters.qualifications import Qualification
 from app.db.models.consultant.consultant_enquiry import ConsultantEnquiry
+from app.db.models.masters.languages import Language
 
 # Import other models as you create them
 # from app.db.models.consultant_enquiry import *
