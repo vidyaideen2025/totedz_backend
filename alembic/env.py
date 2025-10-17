@@ -13,6 +13,9 @@ from app.db.base import Base
 # Import all models here to ensure they are registered with Base.metadata
 from app.db.models.user import User
 from app.db.models.masters.roles import Role
+from app.db.models.masters.qualifications import Qualification
+from app.db.models.consultant.consultant_enquiry import ConsultantEnquiry
+
 # Import other models as you create them
 # from app.db.models.consultant_enquiry import *
 # from app.db.models.consultant_profile import *

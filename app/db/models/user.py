@@ -22,6 +22,8 @@ class User(Base):
     is_phone_verified = Column(Boolean, default=False)
     
     role = relationship("Role", back_populates="users")
+    consultant_enquiry = relationship("ConsultantEnquiry", back_populates="user")
+    verified_consultant_enquiry = relationship("ConsultantEnquiry", back_populates="verified_by")
 
 
     
